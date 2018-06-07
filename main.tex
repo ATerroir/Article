@@ -31,11 +31,11 @@
                         \rho_{13} & \rho_{23} & \rho_{3}\end{pmatrix}\label{Density_tensor}.
     \end{align}
     The propagation problem is described on the figure (\ref{Schema_PB}), the medium is excited with a acoustic harmonic plane wave on $x_3=L$. The fluid layer is supposed to be infinite along the plan $x_1x_2$ and with a debt L along $x_3$. The incident wave is oriented with two angle , elevation $\theta$ and azimuthal $\phi$, the three projected wave number are :   
-   \begin{align*}
-    &k_1=-k_0 sin(\theta) cos(\phi), \\
-    &k_2=-k_0 sin(\theta) sin(\phi), \\
-    &k_3= -k_0 cos(\theta),
-    \end{align*}
+   \begin{align}
+    &k_1=-k_0 sin(\theta) cos(\phi),\label{k1} \\
+    &k_2=-k_0 sin(\theta) sin(\phi),\label{k2} \\
+    &k_3= -k_0 cos(\theta),\label{k3}
+    \end{align}
     where $k^{(0)}$ is the incident wave number at the radial frequency $\omega$. 
     
     \begin{figure}[ht]
@@ -172,7 +172,43 @@
 %% Phase-shift term q    
     Some information still unknown to identify the complex density, the density can be solved when the impedance $Z_3$, and so the propagation between the two interface, is determined for all the angle of incidence. To do that, the phase-shift term $\tilde{q}$, then $q_1$ and $q_2$, should be derive. 
     
-    The two phase-shift terms can be identified independently by looking a their own contribution on the direction $x_1$ or $x_2$. Each terms correspond to a phase-shift along one of the direction of the plane, it can see as a phase-shift induce by a rotation of the plan $x_1x_2$ of the anisotropic layer, so by a physic meaning, it can be express a simple formulation. The reflection coefficient shouldn't change between 2 opposite angle incidence ($\theta=\frac{\pi}{6}$ and $\theta=\frac{-\pi}{6}$ for example), the reflected wave only seeing a surface impedance. On the other hand, the transmission characterizing the propagation trough the layer, a phase-shift should be observe between two opposite angle of incidence. Mathematically, this can be showed regarding the transmission and reflection coefficient expression (\ref{Transmission}) and (\ref{Reflexion}), for a fix azimuthal angle of incidence $\phi$ and two opposite polar angle of incidence $\pm \theta$     
+    The two phase-shift terms can be identified independently by looking a their own contribution on the direction $x_1$ or $x_2$. Each terms correspond to a phase-shift along one of the direction of the plane, it can see as a phase-shift induce by a rotation of the plan $x_1x_2$ of the anisotropic layer, so by a physic meaning, it can be express a simple formulation. The reflection coefficient shouldn't change between 2 opposite angle incidence ($\theta=\frac{\pi}{6}$ and $\theta=\frac{-\pi}{6}$ for example), the reflected wave only seeing a surface impedance. On the other hand, the transmission characterizing the propagation trough the layer, a phase-shift should be observe between two opposite angle of incidence. Mathematically, this can be showed regarding the transmission and reflection coefficient expression (\ref{Transmission}) and (\ref{Reflexion}), for a fix azimuthal angle of incidence $\phi$ and two opposite polar angle of incidence $\pm \theta$. In the wave number $k_{33}$ and the impedance $Z_3$, the only term depending of the angle incidence is the effective bulk modulus $\tilde{K}$, term that still the same for the two opposite polar angle $\theta$ by his expression (\ref{Ktild}). Plus the impedance $Z$ depending of a pair  function of $\theta$, it come that the only change in R and T come from the phase-term $\tilde{q}$. Then selecting the right azimuthal angle $\phi$, $q_1$ and $q_2$ can be identified with a simple ratio of transmission coefficient for two opposite polar angle of incidence $\theta$. The next choose of polar angle $\theta$ is make, to simplify the identification of density in the next step. Two terms are defined here, the phase-shift term $q_1^{(0)}$ and $q_2^{(0)}$, corresponding to $q_1$ and $q_2$ without projection of the incident wavenumber $k^{(0)}$, so :
+    \begin{align}
+        q_1^{(0)}=\frac{\rho_2\rho_{13}-\rho_{12}\rho_{23}}{\rho_1\rho_2-\rho_{12}^2}k^{(0)},\\
+        q_2^{(0)}=\frac{\rho_1\rho_{23}-\rho_{12}\rho_{13}}{\rho_1\rho_2-\rho_{12}^2}k^{(0)}.
+    \end{align}
+    Then using the expression (\ref{Transmission}), it come :
+    \begin{align}
+     e^{iq_1^{(0)}L}=\frac{T^{\theta=\frac{-\pi}{6}}_{\phi=0}}{T^{\theta=\frac{-\pi}{6}}_{\phi=0}},\ e^{iq_1^{(0)}L}=\frac{T^{\theta=\frac{\pi}{6}}_{\phi=\frac{-\pi}{2}}}{T^{\theta=\frac{-\pi}{6}}_{\phi=\frac{-\pi}{2}}}.
+    \end{align}
+    
+    Now that $\tilde{q}$ is known, the impedance can be determined for any angle of incidence, the complex density can be identify, it first proposed here to rewrite the expression of the effective impedance $Z_3$ as a explicit function of the densities $\rho_1$, $\rho_2$ and $\rho_{12}$. Considering that the effective bulk modulus can be express as $\tilde{K}=\frac{K}{\alpha}$ from the expression (\ref{Ktild}), so $Z_3$ can write as :
+    \begin{align}
+        &Z_3=\sqrt{\tilde{\rho_3}\tilde{K}}=\sqrt{\frac{\tilde{\rho_3}K}{\alpha}},\\
+        &\alpha=1-\frac{K}{\omega^2}\frac{\rho_2 k_1^2+\rho_1 k_2^2-2\rho_{12}k_1k_2}{\rho_1\rho_2-\rho_{12}^2}.
+    \end{align}
+    A new system of equation can be express as :
+    \begin{align}
+        \frac{K}{\omega^2}\frac{\rho_2k_1^2 +\rho_1k_2^2-2\rho_{12}k_1k_2}{\rho_1\rho_2-\rho_{12}^2}=1-\frac{\tilde{\rho_3}K}{Z_3^2}\label{Eq_res}
+    \end{align}
+    
+    The next notation is made to simplify the resolution method :
+    \begin{align}
+        &\gamma=1-\frac{\tilde{\rho_3}K}{Z_3^2},\\
+        &X_{(x)}^{(y)}=X|^{\theta=y}_{\phi=x}.
+    \end{align}
+    Here it's proposed to use the equation (\ref{Eq_res}), for different angle of incidence, to determine the tree planar density $\rho_1$, $\rho_2$ and $\rho_{12}$. Using the projection of the incident wave number $k^{(0)}$ (\ref{k1}) and (\ref{k2}), it's possible to choose the right angle of incidence, so the projected wave number can be equal for all angle of incidence. The angle choose here are the following : $\theta=\frac{\pi}{6}$ and $\phi=0$ along $x_1$, $\theta=\frac{\pi}{6}$ and $\phi=\frac{\pi}{2}$ along $x_2$, and $\theta=\frac{\pi}{4}$ and $\phi=\frac{\pi}{4}$ in oblique incident, so it can be write $-k_1=k_2=k=\frac{1}{2}k^{(0)}$.
+    The equation (\ref{Eq_res}) can be write the different angle of incidence :
+        \begin{align}
+    &\frac{K}{\omega^2}\frac{\rho_2}{\rho_1\rho_2-\rho_{12}^2}k^2=\gamma^{(\frac{\pi}{6})}_{(0)}\label{Comp_1},\\ &\frac{K}{\omega^2}\frac{\rho_1}{\rho_1\rho_2-\rho_{12}^2}k^2=\gamma^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}\label{Comp_2},\\ &\frac{K}{\omega^2}\frac{\rho_1+\rho_2-2\rho_{12}}{\rho_1\rho_2-\rho_{12}^2}k^2=\gamma^{(\frac{\pi}{4})}_{(\frac{\pi}{4})}\label{Comp_3}.
+    \end{align}
+    
+    Resolving the system it come :
+    \begin{align}
+        &\rho_1=\frac{\gamma^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}}{\gamma^{(\frac{\pi}{6})}_{(0)}\gamma^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}-\frac{1}{4}(\gamma^{(\frac{\pi}{6})}_{(0)}+\gamma^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}-\gamma^{(\frac{\pi}{4})}_{(\frac{\pi}{4})})^2},\\
+        &\rho_2=\frac{\gamma^{(\frac{\pi}{6})}_{(0)}}{\gamma^{(\frac{\pi}{6})}_{(0)}\gamma^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}-\frac{1}{4}(\gamma^{(\frac{\pi}{6})}_{(0)}+\gamma^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}-\gamma^{(\frac{\pi}{4})}_{(\frac{\pi}{4})})^2},\\
+        &\rho_{12}=\frac{\gamma^{(\frac{\pi}{6})}_{(0)}+\gamma^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}-\gamma^{(\frac{\pi}{4})}_{(\frac{\pi}{4})}}{\gamma^{(\frac{\pi}{6})}_{(0)}\gamma^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}-\frac{1}{4}(\gamma^{(\frac{\pi}{6})}_{(0)}+\gamma^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}-\gamma^{(\frac{\pi}{4})}_{(\frac{\pi}{4})})^2}
+    \end{align}
     
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
