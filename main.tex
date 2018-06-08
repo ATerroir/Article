@@ -243,23 +243,30 @@ The first parameter retrieve by the inverse method is the complex bulk modulus, 
     \end{figure}
     
     As expect of a numerical validation, with no noise introduce in the model, the inverse method recover perfectly the bulk modulus value with a mean deviation of order $10^{-16}\%$ for the real part of K and $10^{-6}\%$ for the imaginary part. The 10-digit difference between the two part, is due to ... .
-
+    
+    Then the density are reconstruct base on the identified bulk modulus,  for the 3 case the obtained density are present on the figure (\ref{Grph_rho_rot}).
     \begin{figure}[ht!]
         \centering
-        \includegraphics[scale=0.3]{Density_rot.png}
+        \includegraphics[scale=0.4]{Density_rot.png}
         \caption{azerty}
         \label{Grph_rho_rot}
     \end{figure}
     
-    Then the density are reconstruct base on the identified bulk modulus,  
-
+    As the bulk modulus , the 6 complex density for the 3 case are well reconstruct and it's possible to recover the density of the porous material in his principal direction with a simple diagonalization of the density matrix (made by the eig function of matlab\copyright). One problem of this method is the arrangement of the eigen value, that need to be made, and can be different from the initial density in the principal direction. This unknown arrangement prevent from deriving the rotation of the principal direction.
+    
+    A convention is need to fix the arrangement of the eigen value, and to determine the rotation of the medium. The rotation is describe here by the three Euler angle, around successively $x_3$, $x_2$ and $x_1$, in configuration "ZYX". The fixed convention here is that both of  the rotation angle $\theta_I$ around $x_1$ and $\theta_{II}$ around $x_2$ should be contain between $0$ and $\frac{\pi}{2}$. After checking if the rotated base is direct, base who correspond to the eigen vector, successive permutation are operated until the condition on $\theta_I$ and $\theta_{II}$ are satisfied, then the permuted eigen vector is convert to euler angle (using the function rotm2eul of matlab\copyright).
+    
+    The figure (\ref{Grph_rho_dir}) present density and angle of rotation obtained.
 
     \begin{figure}[ht!]
         \centering
-        \includegraphics[scale=0.3]{Density_dir.png}
+        \includegraphics[scale=0.4]{Density_dir.png}
         \caption{azerty}
         \label{Grph_rho_dir}
     \end{figure}
+    
+    
+    
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
 
