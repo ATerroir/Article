@@ -38,7 +38,7 @@
     \end{align}
     where $k^{(0)}$ is the incident wave number at the radial frequency $\omega$. 
     
-    \begin{figure}[ht]
+    \begin{figure}[ht!]
         \centering
         \includegraphics[scale=0.6]{Fig3D.png}
         \caption{azerty}
@@ -225,22 +225,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
     The developed method is now apply to a numerical problem with a anisotropic porous material, three unit cell are use to valid the method as show on the figure (\ref{Material}), one isotropic, one orthotropic, and one anisotropic. The porous layer is homogenized as an anisotropic equivalent fluid using the JCAL model(citation), the transmission and reflection coefficients are obtain using a propagation model in a anisotropic equivalent fluid, with the temporal convention $e^{i\omega t}$. The porous layer is of length L and considered rotated so the principal direction are unknown. The euler angle of the rotation are described for each cell on the figure (\ref{Material}). The same complex bulk modulus is use for the three case containing the three different unit cells. 
-    
-    \begin{figure}[ht]
+
+    \begin{figure}[ht!]
         \centering
         \includegraphics[scale=0.5]{Material_2.png}
         \caption{azerty}
         \label{Material}
     \end{figure}
 
-    \begin{figure}[ht]
+The first parameter retrieve by the inverse method is the complex bulk modulus, as the three case of porous show the same bulk modulus and the method show very similar result for his identification, only the anisotropic case is represented on the figure (\ref{Grph_K}) as a global result for the three case.
+
+    \begin{figure}[ht!]
         \centering
         \includegraphics[scale=0.3]{Bulk.png}
         \caption{azerty}
         \label{Grph_K}
     \end{figure}
+    
 
-    \begin{figure}[ht]
+    \begin{figure}[ht!]
         \centering
         \includegraphics[scale=0.3]{Density_rot.png}
         \caption{azerty}
@@ -248,7 +251,7 @@
     \end{figure}
 
 
-    \begin{figure}[ht]
+    \begin{figure}[ht!]
         \centering
         \includegraphics[scale=0.3]{Density_dir.png}
         \caption{azerty}
