@@ -23,14 +23,14 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Description of the configuration}
-    The material studied is a layer of equivalent fluid, with anisotropic complex density as follow : 
+    The presented identification method is based on a propagation problem trough a anisotropic equivalent fluid. The densities of the fluid are suppose to be complex and constitute a density matrix, as the anisotropic fluid is pose to be out of his principal direction. As an equivalent fluid, the complex bulk modulus and densities are dependant of the frequencies. The density matrix of the fluid is write as : 
     \begin{align}
         \Bar{\Bar{\rho}}=\begin{pmatrix}
     					\rho_{1} & \rho_{12} & \rho_{13} \\
                         \rho_{12} & \rho_{2} & \rho_{23} \\
                         \rho_{13} & \rho_{23} & \rho_{3}\end{pmatrix}\label{Density_tensor}.
     \end{align}
-    The propagation problem is described on the figure (\ref{Schema_PB}), the medium is excited with a acoustic harmonic plane wave on $x_3=L$. The fluid layer is supposed to be infinite along the plan $x_1x_2$ and with a debt L along $x_3$. The incident wave is oriented with two angle , elevation $\theta$ and azimuthal $\phi$, the three projected wave number are :   
+    The propagation problem is described on the figure (\ref{Schema_PB}) with a right-hand direct basis, the medium is excited with an incident harmonic plane wave on the interface $x_3=L$. The fluid layer is supposed to be infinite along the plan $x_1x_2$ and with a debt L along $x_3$. The incident wave is oriented with two angle , elevation $\theta$ and azimuthal $\phi$, the three projected wave number are :   
    \begin{align}
     &k_1=-k_0 sin(\theta) cos(\phi),\label{k1} \\
     &k_2=-k_0 sin(\theta) sin(\phi),\label{k2} \\
@@ -59,6 +59,8 @@
     					\end{pmatrix},\label{BC_0}
     \end{align}                         
     with $\bar{S}$ the state vector (pressure and particle velocity) of the wave propagating, and R and T, the reflection coefficient at $x_3=L$ and the transmission coefficient at $x_3=0$.  
+    
+    Notice here that both reflection and transmission coefficients are considered with a phase null.
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Parameters identification}
