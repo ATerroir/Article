@@ -58,9 +58,9 @@
     						Te^{ik_3L} \\ -\frac{k_3}{\rho \omega}Te^{ik_3L}
     					\end{pmatrix},\label{BC_0}
     \end{align}                         
-    with $\bar{S}$ the state vector (pressure and particle velocity) of the wave propagating, and R and T, the reflection coefficient at $x_3=L$ and the transmission coefficient at $x_3=0$.  
+    with $\bar{S}$ the state vector (pressure and particle velocity) of the wave propagating, and R and T, the reflection and transmission coefficient at $x_3=L$ and the transmission coefficient at $x_3=0$.  
     
-    Notice here that both reflection and transmission coefficients are considered with a phase null.
+    Notice here that both of the reflected and transmitted without any phase, the phase is considered in R and T as well as the transmitted and reflected amplitude.
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Parameters identification}
@@ -70,37 +70,40 @@
         &\rho \frac{\partial}{\partial t}v=-\nabla p, \\
 	    &\frac{\partial}{\partial t}p=-K\nabla v,
     \end{align}
-    The solutions are supposed to be harmonic plane wave, of angular frequency $\omega$, write as, with the time convention $e^{-i\omega t}$ :
+    The solutions in the medium are supposed to be harmonic plane wave, of angular frequency $\omega$, write as, with the time convention $e^{-i\omega t}$ :
     \begin{align}
         \xi=\tilde{\xi}e^{i(k_1 x_1+k_2 x_2)}e^{-i\omega t}
     \end{align}
-    Introducing the density matrix $\bar{\bar{\rho}}$ (eq. (\ref{Density_tensor})), the Euler expressions become :
+    Introducing the density matrix $\bar{\bar{\rho}}$ (eq. (\ref{Density_tensor})), the Euler's expressions become :
     \begin{align}
 	    &ik_ip=\sum_{j=1}^{3} i \omega \rho_{ij} v_j,\ i=1,2\label{Euler1}\\
 	    &\frac{\partial}{\partial x_3}p=\sum_{j=1}^{3} i \omega \rho_{3j} v_j\label{Euler2}\\
         &i\omega p= iK(k_1v_1+k_2v_2+\frac{\partial}{\partial x_3}v_3).\label{Euler3}
     \end{align}
-    Using the expressions (\ref{Euler1}), the particle velocity $v_1$ and $v_2$ can be express a function of the state vector $\bar{S}$, and and introducing this function in the expressions (\ref{Euler2}) and (\ref{Euler3}), the propagation matrix $\bar{\bar{A}}$ can be derive as :
+    Using the expressions (\ref{Euler1}), the particle velocity $v_1$ and $v_2$ can be express a function of the state vector $\bar{S}$, and introducing this function in the expressions (\ref{Euler2}) and (\ref{Euler3}), the propagation matrix $\bar{\bar{A}}$ can be derive as :
     \begin{align}
         &\frac{\partial}{\partial x_3}\bar{S} = \bar{\bar{A}} \bar{S},\label{Equa_diff}
         \intertext{with :}
         &\bar{\bar{A}}=\begin{pmatrix}
     				A_{11} & A_{12} \\ A_{21} & A{22}
     			\end{pmatrix}\label{Matrice_complete},\\ 
-         &A_{11}=A_{22}=i[\frac{\rho_{22}\rho_{13}-\rho_{12}\rho_{23}}{\rho_{11}\rho_{22}-\rho_{12}^2}k_1+\frac{\rho_{11}\rho_{23}-\rho_{12}\rho_{13}}{\rho_{11}\rho_{22}-\rho_{12}^2}k_2], \\
-     &A_{12}=i\omega \rho_{33}[1-\frac{\rho_{13}}{\rho_{11}\rho_{22}-\rho_{12}^2}(\frac{k_1^{(i)}}{k_3^{(i)}})^2(\rho_{22}-\rho_{12}(\frac{k_2^{(i)}}{k_1^{(i)}})^2)-\frac{\rho_{23}}{\rho_{11}\rho_{22}-\rho_{12}^2}(\frac{k_2^{(i)}}{k_3^{(i)}})^2(\rho_{11}-\rho_{12}(\frac{k_1^{(i)}}{k_2^{(i)}})^2)], \\
-     &A_{21}=\frac{i\omega}{K}[1-\frac{\rho_{33}}{\rho_{11}\rho_{22}-\rho_{12}^2}(\frac{k_1}{k_3^{(i)}})^2(\rho_{22}-\rho_{12}\frac{k_2}{k_1})-\frac{\rho_{33}}{\rho_{11}\rho_{22}-\rho_{12}^2}(\frac{k_2}{k_3^{(i)}})^2(\rho_{11}-\rho_{12}\frac{k_1}{k_2})],
+         &A_{11}=A_{22}=i[\frac{\rho_2\rho_{13}-\rho_{12}\rho_{23}}{\rho_1\rho_2-\rho_{12}^2}k_1+\frac{\rho_1\rho_{23}-\rho_{12}\rho_{13}}{\rho_1\rho_2-\rho_{12}^2}k_2], \\
+     &A_{12}=i\omega \rho_3[1-\frac{\rho_{13}}{\rho_1\rho_2-\rho_{12}^2}(\frac{k_1^{(i)}}{k_3^{(i)}})^2(\rho_2-\rho_{12}(\frac{k_2^{(i)}}{k_1^{(i)}})^2)-\frac{\rho_{23}}{\rho_1\rho_2-\rho_{12}^2}(\frac{k_2^{(i)}}{k_3^{(i)}})^2(\rho_1-\rho_{12}(\frac{k_1^{(i)}}{k_2^{(i)}})^2)], \\
+     &A_{21}=\frac{i\omega}{K}[1-\frac{\rho_3}{\rho_1\rho_2-\rho_{12}^2}(\frac{k_1}{k_3^{(i)}})^2(\rho_2-\rho_{12}\frac{k_2}{k_1})-\frac{\rho_3}{\rho_1\rho_2-\rho_{12}^2}(\frac{k_2}{k_3^{(i)}})^2(\rho_1-\rho_{12}\frac{k_1}{k_2})],
     \end{align}
     where $k_m^{(i)}$ is a effective wave number along the direction m, independent of the frequency, such as $k_m^{(i)}=\frac{\omega}{\sqrt{\frac{K}{\rho_{m3}}}}$.
     
-    The propagation matrix can be express with new parameter, consider as the effective parameters of the anisotropic fluid. Using the four terms of the equation (\ref{Matrice_complete}), 4 parameters can be identified, the effective bulk modulus $\tilde{K}$, the effective density $\tilde{\rho_3}$ along the propagation direction and two phase-shift terms $q_1$ and $q_2$ link to the non-planar anisotropy.
+    The exhaustive calculus is present on the annex A (\ref{Ann_A}).
+    
+    The propagation matrix can be express with new terms, consider as the effective parameters of the anisotropic fluid. Using the four terms of the equation (\ref{Matrice_complete}), 4 parameters can be identified, the effective bulk modulus $\tilde{K}$, the effective density $\tilde{\rho_3}$ along the propagation direction and two phase-shift terms $q_1$ and $q_2$ link to the non-planar anisotropy.
     
     \begin{align}
-     &\tilde{K}=\frac{K}{[1-\frac{\rho_{33}}{\rho_{11}\rho_{22}-\rho_{12}^2}(\frac{k_1}{k_3^{(i)}})^2(\rho_{22}-\rho_{12}\frac{k_2}{k_1})-\frac{\rho_{33}}{\rho_{11}\rho_{22}-\rho_{12}^2}(\frac{k_2}{k_3^{(i)}})^2(\rho_{11}-\rho_{12}\frac{k_1}{k_2})]}\label{Ktild},\\
-     &\tilde{\rho_3}=\rho_{33}[1-\frac{\rho_{13}}{\rho_{11}\rho_{22}-\rho_{12}^2}(\frac{k_1^{(i)}}{k_3^{(i)}})^2(\rho_{22}-\rho_{12}(\frac{k_2^{(i)}}{k_1^{(i)}})^2)-\frac{\rho_{23}}{\rho_{11}\rho_{22}-\rho_{12}^2}(\frac{k_2^{(i)}}{k_3^{(i)}})^2(\rho_{11}-\rho_{12}(\frac{k_1^{(i)}}{k_2^{(i)}})^2)]\label{rho3tild}, \\
-	&q_{1}=\frac{\rho_{22}\rho_{13}-\rho_{12}\rho_{23}}{\rho_{11}\rho_{22}-\rho_{12}^2}k_1\label{q1},\\
-    &q_{2}= \frac{\rho_{11}\rho_{23}-\rho_{12}\rho_{13}}{\rho_{11}\rho_{22}-\rho_{12}^2}k_2\label{q2}.
+     &\tilde{K}=\frac{K}{[1-\frac{\rho_3}{\rho_1\rho_2-\rho_{12}^2}(\frac{k_1}{k_3^{(i)}})^2(\rho_2-\rho_{12}\frac{k_2}{k_1})-\frac{\rho_3}{\rho_1\rho_2-\rho_{12}^2}(\frac{k_2}{k_3^{(i)}})^2(\rho_1-\rho_{12}\frac{k_1}{k_2})]}\label{Ktild},\\
+     &\tilde{\rho_3}=\rho_3[1-\frac{\rho_{13}}{\rho_1\rho_2-\rho_{12}^2}(\frac{k_1^{(i)}}{k_3^{(i)}})^2(\rho_2-\rho_{12}(\frac{k_2^{(i)}}{k_1^{(i)}})^2)-\frac{\rho_{23}}{\rho_{1}\rho_2-\rho_{12}^2}(\frac{k_2^{(i)}}{k_3^{(i)}})^2(\rho_1-\rho_{12}(\frac{k_1^{(i)}}{k_2^{(i)}})^2)]\label{rho3tild}, \\
+	&q_{1}=\frac{\rho_2\rho_{13}-\rho_{12}\rho_{23}}{\rho_1\rho_2-\rho_{12}^2}k_1\label{q1},\\
+    &q_{2}= \frac{\rho_1\rho_{23}-\rho_{12}\rho_{13}}{\rho_1\rho_2-\rho_{12}^2}k_2\label{q2}.
           \end{align}
+          Some observation can be done on the new parameters of the propagation matrix $\bar{\bar{A}}$, On the effective density $\tilde{\rho_3}$ along the direction of propagation,it can show that $\tilde{\rho_3}$ is only dependant to frequency trough the densities, plus if the fluid considered is isotropic we have $\tilde{\rho_3}=\rho_3$. On the bulk modulus, the first comment is that he depend on the frequency, and of the angle of incidence as well. Moreover two peculiar case can be distinguish, with a isotropic equivalent fluid and for any anistropy in normal incident, the effective bulk modulus show $\tilde{K}=K$. % Comment on q   
           
     The transfer matrix can be obtain knowing the propagation matrix, resolving the equation (\ref{Equa_diff}), so :
     \begin{align}
@@ -274,26 +277,28 @@ The first parameter retrieve by the inverse method is the complex bulk modulus, 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Annexe}
-\subsection*{Propagation matrix $\bar{\bar{A}}$}
-	From the expression (\ref{Euler1}), $v_1$ and $v_2$ can be express as a function of $p$ and $v_3$, so :
+\section{Annex}
+\subsection*{Annex A :Propagation matrix $\bar{\bar{A}}$}
+\label{Ann_A}	
+From the expression (\ref{Euler1}), $v_1$ and $v_2$ can be express as a function of $p$ and $v_3$, so :
 \begin{align*}
-	v_1=\frac{1}{\rho_{11}-\frac{\rho_{12}^2}{\rho_{22}}}([\frac{k_1}{\omega}-\frac{\rho_{12}}{\rho_{22}}\frac{k_2}{\omega}]p+[\frac{\rho_{12}}{\rho_{22}}\rho_{23}-\rho_{13}]v_3), \\
-	v_2=\frac{1}{\rho_{22}-\frac{\rho_{12}^2}{\rho_{11}}}([\frac{k_2}{\omega}-\frac{\rho_{12}}{\rho_{11}}\frac{k_1}{\omega}]p+[\frac{\rho_{12}}{\rho_{11}}\rho_{13}-\rho_{23}]v_3).
+	v_1=\frac{1}{\rho_1-\frac{\rho_{12}^2}{\rho_2}}([\frac{k_1}{\omega}-\frac{\rho_{12}}{\rho_2}\frac{k_2}{\omega}]p+[\frac{\rho_{12}}{\rho_2}\rho_{23}-\rho_{13}]v_3), \\
+	v_2=\frac{1}{\rho_2-\frac{\rho_{12}^2}{\rho_1}}([\frac{k_2}{\omega}-\frac{\rho_{12}}{\rho_1}\frac{k_1}{\omega}]p+[\frac{\rho_{12}}{\rho_1}\rho_{13}-\rho_{23}]v_3).
 \end{align*}
  	Introducing this expression in (\ref{Euler2}) and (\ref{Euler3}), can be write $\frac{\partial}{\partial x_3}\bar{S}$ as $\frac{\partial}{\partial x_3}\bar{S}(p,v_3)$ :
     \begin{align*}
-    \frac{\partial}{\partial x_3}v_3=&[\frac{i\omega}{K}-\frac{ik_1}{\rho_{11}-\frac{\rho_{12}^2}{\rho_{22}}}(\frac{k_1}{\omega}-\frac{\rho_{12}}{\rho_{22}}\frac{k_2}{\omega})-\frac{ik_2}{\rho_{22}-\frac{\rho_{12}^2}{\rho_{11}}}(\frac{k_2}{\omega}-\frac{\rho_{12}}{\rho_{11}}\frac{k_1}{\omega})]p\\
-    &-[\frac{ik_1}{\rho_{11}-\frac{\rho_{12}^2}{\rho_{22}}}(\frac{\rho_{12}}{\rho_{22}}\rho_{23}-\rho_{13})+\frac{ik_2}{\rho_{22}-\frac{\rho_{12}^2}{\rho_{11}}}(\frac{\rho_{12}}{\rho_{11}}\rho_{13}-\rho_{23})]v_3,
+    \frac{\partial}{\partial x_3}v_3=&[\frac{i\omega}{K}-\frac{ik_1}{\rho_1-\frac{\rho_{12}^2}{\rho_2}}(\frac{k_1}{\omega}-\frac{\rho_{12}}{\rho_2}\frac{k_2}{\omega})-\frac{ik_2}{\rho_2-\frac{\rho_{12}^2}{\rho_1}}(\frac{k_2}{\omega}-\frac{\rho_{12}}{\rho_1}\frac{k_1}{\omega})]p\\
+    &-[\frac{ik_1}{\rho_1-\frac{\rho_{12}^2}{\rho_2}}(\frac{\rho_{12}}{\rho_2}\rho_{23}-\rho_{13})+\frac{ik_2}{\rho_2-\frac{\rho_{12}^2}{\rho_1}}(\frac{\rho_{12}}{\rho_1}\rho_{13}-\rho_{23})]v_3,
     \end{align*}
     and 
     \begin{align*}
-    \frac{\partial}{\partial x_3}p=&[\frac{i\omega \rho_{13}}{\rho_{11}-\frac{\rho_{12}^2}{\rho_{22}}}(\frac{k_1}{\omega}-\frac{\rho_{12}}{\rho_{22}}\frac{k_2}{\omega})+\frac{i\omega \rho_{23}}{\rho_{22}-\frac{\rho_{12}^2}{\rho_{11}}}(\frac{k_2}{\omega}-\frac{\rho_{12}}{\rho_{11}}\frac{k_1}{\omega})]p\\
-    &+[\frac{i\omega \rho_{13}}{\rho_{11}-\frac{\rho_{12}^2}{\rho_{22}}}(\frac{\rho_{12}}{\rho_{22}}\rho_{23}-\rho_{13})+\frac{i\omega \rho_{23}}{\rho_{22}-\frac{\rho_{12}^2}{\rho_{11}}}(\frac{\rho_{12}}{\rho_{11}}\rho_{13}-\rho_{23})]v_3.
+    \frac{\partial}{\partial x_3}p=&[\frac{i\omega \rho_{13}}{\rho_1-\frac{\rho_{12}^2}{\rho_2}}(\frac{k_1}{\omega}-\frac{\rho_{12}}{\rho_2}\frac{k_2}{\omega})+\frac{i\omega \rho_{23}}{\rho_2-\frac{\rho_{12}^2}{\rho_1}}(\frac{k_2}{\omega}-\frac{\rho_{12}}{\rho_1}\frac{k_1}{\omega})]p\\
+    &+[\frac{i\omega \rho_{13}}{\rho_1-\frac{\rho_{12}^2}{\rho_2}}(\frac{\rho_{12}}{\rho_2}\rho_{23}-\rho_{13})+\frac{i\omega \rho_{23}}{\rho_2-\frac{\rho_{12}^2}{\rho_1}}(\frac{\rho_{12}}{\rho_1}\rho_{13}-\rho_{23})]v_3.
     \end{align*}
     Writing this two equation in matrix form, the expression (\ref{Matrice_complete}) can be obtain.
     
-\subsection*{Reflection and transmission coefficients}
+\subsection*{Annex B : Reflection and transmission coefficients}
+\label{Ann_B}	
     To obtain the reflection and transmission coefficient, the transfer matrix $Tr$ and the boundary condition (\ref{BC_L}) and (\ref{BC_0}) are required.
     The expression of $Tr$ (\ref{Transfer_Matrix}) can be develop as :
      	\begin{align*}
@@ -325,7 +330,8 @@ The first parameter retrieve by the inverse method is the complex bulk modulus, 
     
     And resolving the system of 2 equation with 2 unknown, the reflection and transmission coefficient (\ref{Transmission}) and (\ref{Reflexion}) can be obtain.
     
-\subsection*{$\rho_1$, $\rho_2$ and $\rho_{12}$ determination}
+\subsection*{Annex C : $\rho_1$, $\rho_2$ and $\rho_{12}$ determination}
+\label{Ann_C}	
     To determine the three densities $\rho_1$, $\rho_2$ and $\rho_{12}$, it's proposed to resolve the system of 3 equation with 3 unknown  [(\ref{Comp_1}):(\ref{Comp_3})], three ratio of densities can be defined as : 
     
     \begin{align}
