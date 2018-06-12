@@ -9,6 +9,7 @@
 \geometry{hmargin=2.0cm,vmargin=1.5cm}
 \usepackage{wrapfig}	% Figures avec du texte autour
 \usepackage{lipsum}
+\bibliographystyle{plain}
 
 \title{Anisotropic equivalent fluid identification}
 \author{Arthur TERROIR}
@@ -103,7 +104,7 @@
 	&q_{1}=\frac{\rho_2\rho_{13}-\rho_{12}\rho_{23}}{\rho_1\rho_2-\rho_{12}^2}k_1\label{q1},\\
     &q_{2}= \frac{\rho_1\rho_{23}-\rho_{12}\rho_{13}}{\rho_1\rho_2-\rho_{12}^2}k_2\label{q2}.
           \end{align}
-          Some observation can be done on the new parameters of the propagation matrix $\bar{\bar{A}}$, On the effective density $\tilde{\rho_3}$ along the direction of propagation,it can show that $\tilde{\rho_3}$ is only dependant to frequency trough the densities, plus if the fluid considered is isotropic we have $\tilde{\rho_3}=\rho_3$. On the bulk modulus, the first comment is that he depend on the frequency, and of the angle of incidence as well. Moreover two peculiar case can be distinguish, with a isotropic equivalent fluid and for any anistropy in normal incident, the effective bulk modulus show $\tilde{K}=K$. % Comment on q   
+          Some observation can be done on the new parameters of the propagation matrix $\bar{\bar{A}}$, On the effective density $\tilde{\rho_3}$ along the direction of propagation,it can show that $\tilde{\rho_3}$ is only dependant to frequency trough the densities, plus if the fluid considered is isotropic we have $\tilde{\rho_3}=\rho_3$. On the bulk modulus, the first comment is that he depend on the frequency, and of the angle of incidence as well. Moreover two peculiar case can be distinguish, with a isotropic equivalent fluid and for any anistropy in normal incident, the effective bulk modulus show $\tilde{K}=K$. % comment on q ?   
           
     The transfer matrix can be obtain knowing the propagation matrix, resolving the equation (\ref{Equa_diff}), so :
     \begin{align}
@@ -117,7 +118,7 @@
     								-ik_{33}+i\tilde{q} & 0 \\ 0 & ik_{33}+i\tilde{q} 
     							\end{pmatrix} \bar{\bar{U^{-1}}},
     \end{align}
-    where U is the eigen vector $\bar{\bar{U}}=\frac{1}{\sqrt{2}}\begin{pmatrix} Z_3 & Z_3 \\ -1 & 1 \end{pmatrix}$, $k_{33}$ the effective wave number along $x_3$ as $k_{33}=\frac{\omega}{c_{33}}=\frac{\omega}{\frac{\tilde{K}}{\tilde{\rho_3}}}$, $\tilde{c_{33}}$ the effective celerity, $Z_3$ the effective impedance as $Z_3=\tilde{\rho_3c_{33}}$, and $\tilde{q}$ is the global phase-shift terms $\tilde{q_1+q_2}$.
+    where U is the eigen vector $\bar{\bar{U}}=\frac{1}{\sqrt{2}}\begin{pmatrix} Z_3 & Z_3 \\ -1 & 1 \end{pmatrix}$, $k_{33}$ the effective wave number along $x_3$ as $k_{33}=\frac{\omega}{c_{33}}=\frac{\omega}{\frac{\tilde{K}}{\tilde{\rho_3}}}$, $\tilde{c_{33}}$ the effective celerity, $Z_3$ the effective impedance as $Z_3=\tilde{\rho_3c_{33}}$, and $\tilde{q}$ is the global phase-shift terms $\tilde{q}=q_1+q_2$.
     
     Then it come the following transfer matrix $Tr$ :
         \begin{align}
@@ -131,14 +132,15 @@
     &T=\frac{e^{-i\tilde{q}L}}{cos(k_{33}L)-\frac{i}{2}(\frac{Z}{Z_3}+\frac{Z_3}{Z})sin(k_{33}L)}\label{Transmission},\\ 
     &R=\frac{i}{2} \frac{(\frac{Z}{Z_3}-\frac{Z_3}{Z})sin(k_{33}L)}{cos(k_{33}L)-\frac{i}{2}(\frac{Z_3}{Z}+\frac{Z}{Z_3})sin(k_{33}L)}\label{Reflexion}. 
       \end{align}
+      The complete derivation is shown on the annex B (\ref{Ann_B}).
 
 \subsection{Identification}
-    The propagation between the two interfaces of the layer is now known with the transfer matrix (\ref{Transfer_Matrix}), an identification can be develop based on a inverse method. If the reflection and transmission are supposed to be the known parameters of the problem, the parameter to determine are the complex densities and the bulk modulus. Notice that the length of the layer L is supposed to be previously determine.
+    The propagation between the two interfaces of the layer is now known with the transfer matrix (\ref{Transfer_Matrix}), an identification can be develop based on a inverse propagation method. The reflection and transmission are supposed to be the known parameters, so there's seven unknown to determine, as the six complex densities and the bulk modulus. Notice that the length of the layer L is supposed to be previously determine.
     
-    To achieve the inverse propagation method, it's proposed here to take information from 6 angle of incidence, at first a view, using 6 angle of incidence for R and T induce 12 information to determine 7 parameters (6 density and the bulk modulus), so the method seems oversized. The excess of information come from the redundant information of the bulk modulus, in fact for all the angle of incidence, the information of the bulk modulus is present. 
+    To achieve the inverse propagation method, it's proposed here to take information  of R and T from 6 angle of incidence , at first a view, using 6 angle induce 12 information for the identification of 7 parameters, so the method seems oversized. The excess of information come from the redundant information of the bulk modulus, in fact for all the angle of incidence, the information of the bulk modulus is present. 
     
     %% Z3, F(R,T,q)
-    The first step of the inverse method is to obtain an information about the propagation between the 2 interface of the layer using R and T, so it's proposed here to rewrite the propagation equation so parameters containing the propagation information can be express. 
+    The first step of the inverse method is to obtain an information about the propagation between the 2 interface of the layer using R and T, so it's proposed here to rewrite the propagation equation so parameters containing the propagation information can be express. There's 3 parameters use to characterize the propagation trough the the medium, the bulk modulus K, the effective impedance $Z_3$ and the effective wavenumber $k_{33}$.
     
     Introducing the analytic expression of the transfer matrix $Tr$ (\ref{Transfer_Matrix}) in the differential equation (\ref{PB}), the propagation equation become :
     \begin{align}
@@ -152,7 +154,7 @@
     &e^{-i k_{33}L}=\frac{(1+R)+\frac{Z_3}{Z}(1-R)}{(1+\frac{Z_3}{Z})T}e^{-i\tilde{q}L}.\label{k_33_tmp2}
     \end{align} 
 
-    At this point, there's 2 possibility of using the new equation of propagation, the first and the one that will be use for the resolution is to make the product of the (\ref{k_33_tmp1}) and (\ref{k_33_tmp2}) to cancel the $k_{33}$ terms and obtain the effective impedance $Z_3$ as a function of R,T and the characteristic impedance $Z$. Note that $Z$ is defined by the medium of the incident wave as $Z=\frac{\rho \omega}{k_3}$.
+    At this point, two parameters can be express using the new equation of propagation, the first one  is the effective impedance that will be use for the resolution,obtain by the product of (\ref{k_33_tmp1}) and (\ref{k_33_tmp2}),xo it cancel the $k_{33}$ terms. The effective impedance $Z_3$ is derive as a function of R,T and the characteristic impedance $Z$. Note that $Z$ is defined by the medium of the incident wave as $Z=\frac{\rho \omega}{k_3}$.
     The impedance $Z_3$ can express as, with the product (\ref{k_33_tmp1}).(\ref{k_33_tmp2}) :
     \begin{align}
     Z_3^2=\frac{T^2e^{2i\tilde{q}L}-(1+R)^2}{T^2e^{2i\tilde{q}L}-(1-R)^2}Z^2\label{Z3}.
@@ -161,33 +163,46 @@
     A function $F(R,T,\tilde{q})$ is defined, so it can be write :
     \begin{align}
         Z_3=F(R,T,\tilde{q}),\\
-        F(R,T,\tilde{q})=\sqrt{\frac{T^2e^{2i\tilde{q}L}-(1+R)^2}{T^2e^{2i\tilde{q}L}-(1-R)^2}}1.
+        F(R,T,\tilde{q})=\sqrt{\frac{T^2e^{2i\tilde{q}L}-(1+R)^2}{T^2e^{2i\tilde{q}L}-(1-R)^2}}.
     \end{align}
     
     %% K
-    Another way of extracting the propagation information is to know the effective wave number $k_{33}$ using one of the two equation (\ref{k_33_tmp1}) and (\ref{k_33_tmp2}).
-    In the current state of the problem, the phase-shift term $\tilde{q}$ is not known yet, so both of $k_{33}$ and $Z_3$ are unknown. It's know from the expression (\ref{q1}) and (\ref{q2}) that $\tilde{q}$ is null in normal incidence, then both of $k_{33}$ and $Z_3$ can be determined in this case. 
+    The second parameter that can be determine is the effective wave number $k_{33}$ using one of the two equation (\ref{k_33_tmp1}) or (\ref{k_33_tmp2}).
+    $k_{33}$ can be extract from one of this equation with a simple derivation. $\xi$ is defined as $\xi=\frac{(1+R)-\frac{Z_3}{Z}(1-R)}{(1-\frac{Z_3}{Z})T}e^{-i\tilde{q}L}$, so it can be write $\xi=|\xi|e^{i\psi}$. Then the equation (\ref{k_33_tmp1}) became :
+    \begin{align}
+	e^{i k_{33}L}=|\xi|e^{i\psi},
+    \end{align}
+    and it come, considering $k_{33}=\Re(k_{33})+i\ \Im(k_{33})$ :
+    \begin{align}
+        k_{33}=\frac{\psi-i\ ln(|\xi|)}{L}
+    \end{align}
     
+    In the current state of the problem, the phase-shift term $\tilde{q}$ is not known yet, so both of $k_{33}$ and $Z_3$ are unknown. It's know from the expression (\ref{q1}) and (\ref{q2}) that $\tilde{q}$ is null in normal incidence, then both of $k_{33}$ and $Z_3$ can be determined in this case. 
     Using this 2 parameters, the bulk modulus and the effective density $\tilde{\rho_3}$ can be derive. It possible to show that the effective bulk modulus $\tilde{K}$ can be write as $\tilde{K}=K$ with the expression (\ref{Ktild}) in normal incidence, and we remind that $k_{33}=\frac{\omega}{c_{33}}=\omega\frac{\tilde{\rho_3}}{\tilde{K}}$. Then it come, with the definition of the effective impedance $Z_3=\tilde{\rho_3}\tilde{K}$ :
     \begin{align}
+<<<<<<< HEAD
         K=\frac{Z_3}{k_{33}}\omega|^{\theta=0}_{\phi=0},\\
         \tilde{\rho_3}=\frac{Z_3k_{33}}{\omega}|^{\theta=0}_{\phi=0}.
+=======
+        &K=\frac{Z_3}{k_{33}}\omega\Large{|}^{\theta=0}_{\phi=0},\\
+        &\tilde{\rho_3}=\frac{Z_3k_{33}}{\omega}\Large{|}^{\theta=0}_{\phi=0}.
+>>>>>>> 7134216df264d64377b55b4b31a978c30e8c4660
     \end{align}
     
 %% Phase-shift term q    
-    Some information still unknown to identify the complex density, the density can be solved when the impedance $Z_3$, and so the propagation between the two interface, is determined for all the angle of incidence. To do that, the phase-shift term $\tilde{q}$, then $q_1$ and $q_2$, should be derive. 
+    Some information still unknown to identify the complex densities, the impedance $Z_3$, and so the propagation between the two interface, should be determined for all the angle of incidence to complete the missing information. To do that, the phase-shift term $\tilde{q}$, then $q_1$ and $q_2$, should be derive. 
     
-    The two phase-shift terms can be identified independently by looking a their own contribution on the direction $x_1$ or $x_2$. Each terms correspond to a phase-shift along one of the direction of the plane, it can see as a phase-shift induce by a rotation of the plan $x_1x_2$ of the anisotropic layer, so by a physic meaning, it can be express a simple formulation. The reflection coefficient shouldn't change between 2 opposite angle incidence ($\theta=\frac{\pi}{6}$ and $\theta=\frac{-\pi}{6}$ for example), the reflected wave only seeing a surface impedance. On the other hand, the transmission characterizing the propagation trough the layer, a phase-shift should be observe between two opposite angle of incidence. Mathematically, this can be showed regarding the transmission and reflection coefficient expression (\ref{Transmission}) and (\ref{Reflexion}), for a fix azimuthal angle of incidence $\phi$ and two opposite polar angle of incidence $\pm \theta$. In the wave number $k_{33}$ and the impedance $Z_3$, the only term depending of the angle incidence is the effective bulk modulus $\tilde{K}$, term that still the same for the two opposite polar angle $\theta$ by his expression (\ref{Ktild}). Plus the impedance $Z$ depending of a pair  function of $\theta$, it come that the only change in R and T come from the phase-term $\tilde{q}$. Then selecting the right azimuthal angle $\phi$, $q_1$ and $q_2$ can be identified with a simple ratio of transmission coefficient for two opposite polar angle of incidence $\theta$. The next choose of polar angle $\theta$ is make, to simplify the identification of density in the next step. Two terms are defined here, the phase-shift term $q_1^{(0)}$ and $q_2^{(0)}$, corresponding to $q_1$ and $q_2$ without projection of the incident wavenumber $k^{(0)}$, so :
+    The two phase-shift terms can be identified independently by looking a their own contribution on the direction $x_1$ or $x_2$. Each terms correspond to a phase-shift along one of the direction of the plane, it can be seen as a phase-shift induce by a rotation of the plan $x_1x_2$ of the anisotropic layer, so by a physic meaning, it can be express with a simple formulation. The reflection coefficient shouldn't change between 2 opposite angle incidence ($\theta=\frac{\pi}{6}$ and $\theta=\frac{-\pi}{6}$ for example), the reflected wave only seeing a surface impedance. On the other hand, the transmission characterizing the propagation trough the layer, a phase-shift should be observe on the transmission coefficient T between two opposite angle of incidence. Mathematically, this can be showed regarding the transmission and reflection coefficient expression (\ref{Transmission}) and (\ref{Reflexion}), for a fix azimuthal angle of incidence $\phi$ and two opposite polar angle of incidence $\pm \theta$. In the wave number $k_{33}$ and the impedance $Z_3$, the only term depending of the angle incidence is the effective bulk modulus $\tilde{K}$, term that still the same for the two opposite polar angle $\theta$ by his expression (\ref{Ktild}). Plus the impedance $Z$ depending of a pair function of $\theta$, it come that the only change in R and T come from the phase-term $\tilde{q}$. Then choosing the right azimuthal angle $\phi$, $q_1$ and $q_2$ can be identified with a simple ratio of transmission coefficient for two opposite polar angle of incidence $\theta$. The next choose of polar angle $\theta$ is make, to simplify the identification of density in the next step. Two terms are defined here, the phase-shift term $q_1^{(0)}$ and $q_2^{(0)}$, corresponding to $q_1$ and $q_2$ without projection of the incident wavenumber $k^{(0)}$, so :
     \begin{align}
-        q_1^{(0)}=\frac{\rho_2\rho_{13}-\rho_{12}\rho_{23}}{\rho_1\rho_2-\rho_{12}^2}k^{(0)},\\
-        q_2^{(0)}=\frac{\rho_1\rho_{23}-\rho_{12}\rho_{13}}{\rho_1\rho_2-\rho_{12}^2}k^{(0)}.
+        &q_1^{(0)}=\frac{\rho_2\rho_{13}-\rho_{12}\rho_{23}}{\rho_1\rho_2-\rho_{12}^2}k^{(0)},\\
+        &q_2^{(0)}=\frac{\rho_1\rho_{23}-\rho_{12}\rho_{13}}{\rho_1\rho_2-\rho_{12}^2}k^{(0)}.
     \end{align}
     Then using the expression (\ref{Transmission}), it come :
     \begin{align}
      e^{iq_1^{(0)}L}=\frac{T^{\theta=\frac{-\pi}{6}}_{\phi=0}}{T^{\theta=\frac{-\pi}{6}}_{\phi=0}},\ e^{iq_1^{(0)}L}=\frac{T^{\theta=\frac{\pi}{6}}_{\phi=\frac{-\pi}{2}}}{T^{\theta=\frac{-\pi}{6}}_{\phi=\frac{-\pi}{2}}}.
     \end{align}
     
-    Now that $\tilde{q}$ is known, the impedance can be determined for any angle of incidence, the complex density can be identify, it first proposed here to rewrite the expression of the effective impedance $Z_3$ as a explicit function of the densities $\rho_1$, $\rho_2$ and $\rho_{12}$. Considering that the effective bulk modulus can be express as $\tilde{K}=\frac{K}{\alpha}$ from the expression (\ref{Ktild}), so $Z_3$ can write as :
+    Now that $\tilde{q}$ is known, using the same trick as for $k_{33}$,  the impedance can be determined for any angle of incidence, the complex density can be identify, it first proposed here to rewrite the expression of the effective impedance $Z_3$ as a explicit function of the densities $\rho_1$, $\rho_2$ and $\rho_{12}$. Considering that the effective bulk modulus can be express as $\tilde{K}=\frac{K}{\alpha}$ from the expression (\ref{Ktild}), so $Z_3$ can write as :
     \begin{align}
         &Z_3=\sqrt{\tilde{\rho_3}\tilde{K}}=\sqrt{\frac{\tilde{\rho_3}K}{\alpha}},\\
         &\alpha=1-\frac{K}{\omega^2}\frac{\rho_2 k_1^2+\rho_1 k_2^2-2\rho_{12}k_1k_2}{\rho_1\rho_2-\rho_{12}^2}.
@@ -229,7 +244,7 @@
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
-    The developed method is now apply to a numerical problem with a anisotropic porous material, three unit cell are use to valid the method as show on the figure (\ref{Material}), one isotropic, one orthotropic, and one anisotropic. The porous layer is homogenized as an anisotropic equivalent fluid using the JCAL model(citation), the transmission and reflection coefficients are obtain using a propagation model in a anisotropic equivalent fluid, with the temporal convention $e^{i\omega t}$. The porous layer is of length L and considered rotated so the principal direction are unknown. The euler angle of the rotation are described for each cell on the figure (\ref{Material}). The same complex bulk modulus is use for the three case containing the three different unit cells. 
+    The developed method is now apply to a numerical problem with a anisotropic porous material, three unit cell are use to valid the method as show on the figure (\ref{Material}), one isotropic, one orthotropic, and one anisotropic. The porous layer is homogenized as an anisotropic equivalent fluid using the JCAL model(\cite{Allard}\cite{Lafarge}\cite{Jhonson}), the transmission and reflection coefficients are obtain using a propagation model in a anisotropic equivalent fluid, with the temporal convention $e^{i\omega t}$. The porous layer is of length L and considered rotated so the principal direction are unknown. The euler angle of the rotation are described for each cell on the figure (\ref{Material}). The same complex bulk modulus is use for the three case containing the three different unit cells. 
 
     \begin{figure}[ht!]
         \centering
@@ -275,7 +290,7 @@ The first parameter retrieve by the inverse method is the complex bulk modulus, 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
 
-
+\bibliography{Biblio}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Annex}
 \subsection*{Annex A :Propagation matrix $\bar{\bar{A}}$}
