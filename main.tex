@@ -29,7 +29,8 @@
         \Bar{\Bar{\rho}}=\begin{pmatrix}
     					\rho_{1} & \rho_{12} & \rho_{13} \\
                         \rho_{12} & \rho_{2} & \rho_{23} \\
-                        \rho_{13} & \rho_{23} & \rho_{3}\end{pmatrix}\label{Density_tensor}.
+                        \rho_{13} & \rho_{23} & \rho_{3}
+                        \end{pmatrix}\label{Density_tensor}.
     \end{align}
     The propagation problem is described on the figure (\ref{Schema_PB}) with a right-hand direct basis, the medium is excited with an incident harmonic plane wave on the interface $x_3=L$. The fluid layer is supposed to be infinite along the plan $x_1x_2$ and with a debt L along $x_3$. The incident wave is oriented with two angle , elevation $\theta$ and azimuthal $\phi$, the three projected wave number are :   
    \begin{align}
@@ -39,10 +40,10 @@
     \end{align}
     where $k^{(0)}$ is the incident wave number at the radial frequency $\omega$. 
     
-    \begin{figure}[h!]
+    \begin{figure}[ht!]
         \centering
-        \includegraphics[scale=0.6]{Fig3D.png}
-        \caption{un premier titre}
+        \includegraphics[scale=0.6]{Fig3D.eps}
+        \caption{Reflection/transmission problem in a anisotropic equivalent fluid. the fluid layer is of dimension L along $x_3$ and suppose to be infinite on the plan $x_1x_2$. The layer is excited with an plan wave with two angle of incidence ,$\theta$ the polar angle and $\phi$ the azimuthal angle.}
         \label{Schema_PB}
     \end{figure}
     
@@ -86,7 +87,7 @@
         &\frac{\partial}{\partial x_3}\bar{S} = \bar{\bar{A}} \bar{S},\label{Equa_diff}
         \intertext{with :}
         &\bar{\bar{A}}=\begin{pmatrix}
-    				A_{11} & A_{12} \\ A_{21} & A{22}
+    				A_{11} & A_{12} \\ A_{21} & A_{22}
     			\end{pmatrix}\label{Matrice_complete},\\ 
          &A_{11}=A_{22}=i[\frac{\rho_2\rho_{13}-\rho_{12}\rho_{23}}{\rho_1\rho_2-\rho_{12}^2}k_1+\frac{\rho_1\rho_{23}-\rho_{12}\rho_{13}}{\rho_1\rho_2-\rho_{12}^2}k_2], \\
      &A_{12}=i\omega \rho_3[1-\frac{\rho_{13}}{\rho_1\rho_2-\rho_{12}^2}(\frac{k_1^{(i)}}{k_3^{(i)}})^2(\rho_2-\rho_{12}(\frac{k_2^{(i)}}{k_1^{(i)}})^2)-\frac{\rho_{23}}{\rho_1\rho_2-\rho_{12}^2}(\frac{k_2^{(i)}}{k_3^{(i)}})^2(\rho_1-\rho_{12}(\frac{k_1^{(i)}}{k_2^{(i)}})^2)], \\
@@ -130,7 +131,7 @@
     Notice that using using the boundary condition (\ref{BC_L}) and (\ref{BC_0}), and introducing the expression (\ref{Transfer_Matrix}) in the equation  (\ref{PB}), it can be show that the reflection and transmission coefficients can be write as :
         \begin{align}
     &T=\frac{e^{-i\tilde{q}L}}{cos(k_{33}L)-\frac{i}{2}(\frac{Z}{Z_3}+\frac{Z_3}{Z})sin(k_{33}L)}\label{Transmission},\\ 
-    &R=\frac{i}{2} \frac{(\frac{Z}{Z_3}-\frac{Z_3}{Z})sin(k_{33}L)}{cos(k_{33}L)-\frac{i}{2}(\frac{Z_3}{Z}+\frac{Z}{Z_3})sin(k_{33}L)}\label{Reflexion}. 
+    &R=\frac{i}{2} \frac{(\frac{Z}{Z_3}-\frac{Z_3}{Z})sin(k_{33}L)}{cos(k_{33}L)-\frac{i}{2}(\frac{Z_3}{Z}+\frac{Z}{Z_3})sin(k_{33}L)}\label{Reflexion}.
       \end{align}
       The complete derivation is shown on the annex B (\ref{Ann_B}).
 
@@ -180,13 +181,8 @@
     In the current state of the problem, the phase-shift term $\tilde{q}$ is not known yet, so both of $k_{33}$ and $Z_3$ are unknown. It's know from the expression (\ref{q1}) and (\ref{q2}) that $\tilde{q}$ is null in normal incidence, then both of $k_{33}$ and $Z_3$ can be determined in this case. 
     Using this 2 parameters, the bulk modulus and the effective density $\tilde{\rho_3}$ can be derive. It possible to show that the effective bulk modulus $\tilde{K}$ can be write as $\tilde{K}=K$ with the expression (\ref{Ktild}) in normal incidence, and we remind that $k_{33}=\frac{\omega}{c_{33}}=\omega\frac{\tilde{\rho_3}}{\tilde{K}}$. Then it come, with the definition of the effective impedance $Z_3=\tilde{\rho_3}\tilde{K}$ :
     \begin{align}
-<<<<<<< HEAD
         K=\frac{Z_3}{k_{33}}\omega|^{\theta=0}_{\phi=0},\\
         \tilde{\rho_3}=\frac{Z_3k_{33}}{\omega}|^{\theta=0}_{\phi=0}.
-=======
-        &K=\frac{Z_3}{k_{33}}\omega\Large{|}^{\theta=0}_{\phi=0},\\
-        &\tilde{\rho_3}=\frac{Z_3k_{33}}{\omega}\Large{|}^{\theta=0}_{\phi=0}.
->>>>>>> 7134216df264d64377b55b4b31a978c30e8c4660
     \end{align}
     
 %% Phase-shift term q    
@@ -244,20 +240,21 @@
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
-    The developed method is now apply to a numerical problem with a anisotropic porous material, three unit cell are use to valid the method as show on the figure (\ref{Material}), one isotropic, one orthotropic, and one anisotropic. The porous layer is homogenized as an anisotropic equivalent fluid using the JCAL model(\cite{Allard}\cite{Lafarge}\cite{Jhonson}), the transmission and reflection coefficients are obtain using a propagation model in a anisotropic equivalent fluid, with the temporal convention $e^{i\omega t}$. The porous layer is of length L and considered rotated so the principal direction are unknown. The euler angle of the rotation are described for each cell on the figure (\ref{Material}). The same complex bulk modulus is use for the three case containing the three different unit cells. 
 
     \begin{figure}[ht!]
         \centering
-        \includegraphics[scale=0.5]{Material_2.png}
-        \caption{azerty}
+        \includegraphics[scale=0.5]{Material_2.eps}
+        \caption{Porous layer homogenized with the JCAL model (\cite{Allard}\cite{Lafarge}\cite{Jhonson}) constitute of ellipsoid cell. Three different cell of dimension $6\mu m$ are use, one isotropic (a), one orthotropic along $x_1x_2$ (b) and one anisotropic (c). For the last two case, the principal rotation are rotated suing 3 euler angle "ZYX".}
         \label{Material}
     \end{figure}
+    
+    The developed method is now apply to a numerical problem with a anisotropic porous material, three unit cell are use to valid the method as show on the figure (\ref{Material}), one isotropic, one orthotropic, and one anisotropic. The porous layer is homogenized as an anisotropic equivalent fluid using the JCAL model(\cite{Allard}\cite{Lafarge}\cite{Jhonson}), the transmission and reflection coefficients are obtain using a propagation model in a anisotropic equivalent fluid, with the temporal convention $e^{i\omega t}$. The porous layer is of length L and considered rotated so the principal direction are unknown. The euler angle of the rotation are described for each cell on the figure (\ref{Material}). The same complex bulk modulus is use for the three case containing the three different unit cells. 
 
 The first parameter retrieve by the inverse method is the complex bulk modulus, as the three case of porous show the same bulk modulus and the method show very similar result for his identification, only the anisotropic case is represented on the figure (\ref{Grph_K}) as a global result for the three case.
 
     \begin{figure}[ht!]
         \centering
-        \includegraphics[scale=0.3]{Bulk.png}
+        \includegraphics[scale=0.3]{Bulk.eps}
         \caption{azerty}
         \label{Grph_K}
     \end{figure}
@@ -267,7 +264,7 @@ The first parameter retrieve by the inverse method is the complex bulk modulus, 
     Then the density are reconstruct base on the identified bulk modulus,  for the 3 case the obtained density are present on the figure (\ref{Grph_rho_rot}).
     \begin{figure}[ht!]
         \centering
-        \includegraphics[scale=0.4]{Density_rot.png}
+        \includegraphics[scale=0.4]{Density_rot.eps}
         \caption{azerty}
         \label{Grph_rho_rot}
     \end{figure}
@@ -280,7 +277,7 @@ The first parameter retrieve by the inverse method is the complex bulk modulus, 
 
     \begin{figure}[ht!]
         \centering
-        \includegraphics[scale=0.4]{Density_dir.png}
+        \includegraphics[scale=0.4]{Density_dir.eps}
         \caption{azerty}
         \label{Grph_rho_dir}
     \end{figure}
@@ -319,12 +316,12 @@ From the expression (\ref{Euler1}), $v_1$ and $v_2$ can be express as a function
      	\begin{align*}
  	Tr &=\bar{\bar{U}} \begin{pmatrix}
                          e^{-ik_{33}L} & 0 \\ 0 & e^{ik_{33}L}
-                    \end{pmatrix} \bar{\bar{U^{-1}}}\\
+                    \end{pmatrix} e^{i\tilde{q}L} \bar{\bar{U^{-1}}}\\
      &= \frac{1}{2} \begin{pmatrix}
      					Z_3 & Z_3 \\ -1 & 1
       				\end{pmatrix} \begin{pmatrix}
                                    	e^{-ik_{33}L} & 0 \\ 0 & e^{ik_{33}L}
-                                   \end{pmatrix} \begin{pmatrix}
+                                   \end{pmatrix} e^{i\tilde{q}L} \begin{pmatrix}
      												\frac{1}{Z_3} & -1 \\ \frac{1}{Z_3} & 1
       											 \end{pmatrix}\\
     &=\frac{1}{2} \begin{bmatrix}
