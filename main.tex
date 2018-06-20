@@ -179,7 +179,7 @@
     \end{align}
     
     In the current state of the problem, the phase-shift term $\tilde{q}$ is not known yet, so both of $k_{33}$ and $Z_3$ are unknown. It's know from the expression (\ref{q1}) and (\ref{q2}) that $\tilde{q}$ is null in normal incidence, then both of $k_{33}$ and $Z_3$ can be determined in this case. 
-    Using this 2 parameters, the bulk modulus and the effective density $\tilde{\rho_3}$ can be derive. It possible to show that the effective bulk modulus $\tilde{K}$ can be write as $\tilde{K}=K$ with the expression (\ref{Ktild}) in normal incidence, and we remind that $k_{33}=\frac{\omega}{c_{33}}=\omega\frac{\tilde{\rho_3}}{\tilde{K}}$. Then it come, with the definition of the effective impedance $Z_3=\tilde{\rho_3}\tilde{K}$ :
+    Using this 2 parameters, the bulk modulus and the effective density $\tilde{\rho_3}$ can be derive. It possible to show that the effective bulk modulus $\tilde{K}$ can be write as $\tilde{K}=K$ with the expression (\ref{Ktild}) in normal incidence, and we remind that $k_{33}=\frac{\omega}{c_{33}}=\omega\sqrt{\frac{\tilde{\rho_3}}{\tilde{K}}}$. Then it come, with the definition of the effective impedance $Z_3^2=\tilde{\rho_3}\tilde{K}$ :
     \begin{align}
         K=\frac{Z_3}{k_{33}}\omega|^{\theta=0}_{\phi=0},\\
         \tilde{\rho_3}=\frac{Z_3k_{33}}{\omega}|^{\theta=0}_{\phi=0}.
@@ -195,7 +195,7 @@
     \end{align}
     Then using the expression (\ref{Transmission}), it come :
     \begin{align}
-     e^{iq_1^{(0)}L}=\frac{T^{\theta=\frac{-\pi}{6}}_{\phi=0}}{T^{\theta=\frac{-\pi}{6}}_{\phi=0}},\ e^{iq_1^{(0)}L}=\frac{T^{\theta=\frac{\pi}{6}}_{\phi=\frac{-\pi}{2}}}{T^{\theta=\frac{-\pi}{6}}_{\phi=\frac{-\pi}{2}}}.
+     e^{iq_1^{(0)}L}=\frac{T^{\theta=\frac{\pi}{6}}_{\phi=0}}{T^{\theta=\frac{-\pi}{6}}_{\phi=0}},\ e^{iq_2^{(0)}L}=\frac{T^{\theta=\frac{\pi}{6}}_{\phi=\frac{-\pi}{2}}}{T^{\theta=\frac{-\pi}{6}}_{\phi=\frac{-\pi}{2}}}. 
     \end{align}
     
     Now that $\tilde{q}$ is known, using the same trick as for $k_{33}$,  the impedance can be determined for any angle of incidence, the complex density can be identify, it first proposed here to rewrite the expression of the effective impedance $Z_3$ as a explicit function of the densities $\rho_1$, $\rho_2$ and $\rho_{12}$. Considering that the effective bulk modulus can be express as $\tilde{K}=\frac{K}{\alpha}$ from the expression (\ref{Ktild}), so $Z_3$ can write as :
@@ -347,14 +347,14 @@ From the expression (\ref{Euler1}), $v_1$ and $v_2$ can be express as a function
     To determine the three densities $\rho_1$, $\rho_2$ and $\rho_{12}$, it's proposed to resolve the system of 3 equation with 3 unknown  [(\ref{Comp_1}):(\ref{Comp_3})], three ratio of densities can be defined as : 
     
     \begin{align}
-    &\frac{(\ref{Comp_2})}{(\ref{Comp_1})} :\ \frac{\rho_1}{\rho_2}=\frac{\gamma'|^{(\frac{\pi}{6})}_{(0)}}{\gamma'|^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}}=X_1,\label{Comp_rho2_rho1} \\
-    &\frac{(\ref{Comp_1})+(\ref{Comp_2})-(\ref{Comp_3})}{(\ref{Comp_2})} :\ \frac{\rho_{12}}{\rho_1}=\frac{1}{2}\frac{\gamma'|^{(\frac{\pi}{6})}_{(0)}+\gamma'|^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}-\gamma'|^{(\frac{\pi}{4})}_{(\frac{\pi}{4})}}{\gamma'|^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}}=X_2,\label{Comp_rho12_rho1} \\
-    &\frac{(\ref{Comp_1})+(\ref{Comp_2})-(\ref{Comp_3})}{(\ref{Comp_1})} :\ \frac{\rho_{12}}{\rho_2}=\frac{1}{2}\frac{\gamma'|^{(\frac{\pi}{6})}_{(0)}+\gamma'|^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}-\gamma'|^{(\frac{\pi}{4})}_{(\frac{\pi}{4})}}{\gamma'|^{(\frac{\pi}{6})}_{(0)}}=X_3.\label{Comp_rho12_rho2}
+    &\frac{(\ref{Comp_2})}{(\ref{Comp_1})} :\ \frac{\rho_1}{\rho_2}=\frac{\gamma|^{(\frac{\pi}{6})}_{(0)}}{\gamma|^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}}=X_1,\label{Comp_rho2_rho1} \\
+    &\frac{(\ref{Comp_1})+(\ref{Comp_2})-(\ref{Comp_3})}{(\ref{Comp_2})} :\ \frac{\rho_{12}}{\rho_1}=\frac{1}{2}\frac{\gamma|^{(\frac{\pi}{6})}_{(0)}+\gamma|^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}-\gamma|^{(\frac{\pi}{4})}_{(\frac{\pi}{4})}}{\gamma|^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}}=X_2,\label{Comp_rho12_rho1} \\
+    &\frac{(\ref{Comp_1})+(\ref{Comp_2})-(\ref{Comp_3})}{(\ref{Comp_1})} :\ \frac{\rho_{12}}{\rho_2}=\frac{1}{2}\frac{\gamma|^{(\frac{\pi}{6})}_{(0)}+\gamma|^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}-\gamma|^{(\frac{\pi}{4})}_{(\frac{\pi}{4})}}{\gamma|^{(\frac{\pi}{6})}_{(0)}}=X_3.\label{Comp_rho12_rho2}
     \end{align}
     
     And by introducing the expression [(\ref{Comp_rho2_rho1}):(\ref{Comp_rho12_rho2})] in (\ref{Comp_1}, the equation can be express in function of $\rho_2$, so :
     \begin{align}
-    \rho_2=\frac{X_1}{(X_1-X_3^2)\gamma'|^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}}.\label{comp_rho2}
+    \rho_2=\frac{X_1}{(X_1-X_3^2)\gamma|^{(\frac{\pi}{6})}_{(\frac{\pi}{2})}}.\label{comp_rho2}
     \end{align}
     Developed, it come the expression (\ref{rho2})
     Considering $\rho_1=X_1\rho_2$ and $\rho_{12}=X_3\rho_2$, the expression (\ref{rho1}) and (\ref{rho12}) can be obtain.
